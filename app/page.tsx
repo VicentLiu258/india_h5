@@ -1,20 +1,50 @@
 'use client'
 
-import { useState } from 'react'
+import { useRouter } from 'next/navigation'
 import Image from 'next/image'
 import styles from './page.module.css'
 
 export default function Home() {
-  const [isDownloading, setIsDownloading] = useState(false)
+  const router = useRouter()
 
-  const handleDownload = () => {
-    setIsDownloading(true)
-    // 模拟下载过程
-    setTimeout(() => {
-      setIsDownloading(false)
-      // 这里可以添加实际的下载逻辑
-      alert('下载已开始！')
-    }, 2000)
+  // 检测设备类型
+  const detectDevice = () => {
+    if (typeof window === 'undefined') return 'unknown'
+    
+    const userAgent = window.navigator.userAgent || window.navigator.vendor || (window as any).opera
+    
+    // 检测 iOS
+    if (/iPad|iPhone|iPod/.test(userAgent) && !(window as any).MSStream) {
+      return 'ios'
+    }
+    
+    // 检测 Android
+    if (/android/i.test(userAgent)) {
+      return 'android'
+    }
+    
+    return 'unknown'
+  }
+
+  // 中间Download按钮 - 跳转到应用商店
+  const handleStoreDownload = () => {
+    const device = detectDevice()
+    
+    if (device === 'ios') {
+      // 跳转到 App Store (请替换为实际的应用链接)
+      window.open('https://apps.apple.com/app/your-app-id', '_blank')
+    } else if (device === 'android') {
+      // 跳转到 Google Play (请替换为实际的应用链接)
+      window.open('https://play.google.com/store/apps/details?id=your.package.name', '_blank')
+    } else {
+      // 未知设备，跳转到下载页面
+      router.push('/download')
+    }
+  }
+
+  // 底部按钮 - 跳转到下载入口页面
+  const handleDownloadPage = () => {
+    router.push('/download')
   }
 
   const games = [
@@ -108,10 +138,9 @@ export default function Home() {
         <div className={styles.downloadBanner}>
           <button 
             className={styles.downloadButton}
-            onClick={handleDownload}
-            disabled={isDownloading}
+            onClick={handleStoreDownload}
           >
-            {isDownloading ? 'Downloading...' : 'Download'}
+            Download
           </button>
         </div>
         <div className={styles.agentBanner}>
@@ -149,8 +178,7 @@ export default function Home() {
       <div className={styles.footer}>
         <button 
           className={styles.footerDownloadButton}
-          onClick={handleDownload}
-          disabled={isDownloading}
+          onClick={handleDownloadPage}
         >
           Download now to experience
         </button>
