@@ -111,23 +111,7 @@ export default function Home() {
             onClick={handleDownload}
             disabled={isDownloading}
           >
-            {isDownloading ? (
-              <Image
-                src="/res/A 下载中@2x.png"
-                alt="Downloading"
-                width={150}
-                height={45}
-                className={styles.downloadButtonImage}
-              />
-            ) : (
-              <Image
-                src="/res/A 下载@2x.png"
-                alt="Download"
-                width={150}
-                height={45}
-                className={styles.downloadButtonImage}
-              />
-            )}
+            {isDownloading ? 'Downloading...' : 'Download'}
           </button>
         </div>
         <div className={styles.agentBanner}>

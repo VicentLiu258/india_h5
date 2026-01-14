@@ -73,7 +73,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  z-index: 3;
+  z-index: 4;
   flex-shrink: 0;
 }
 
@@ -88,10 +88,10 @@
 .phoneWrapper {
   position: absolute;
   top: 50%;
-  right: 5%;
+  left: 5%;
   width: 35%;
   max-width: 120px;
-  z-index: 4;
+  z-index: 2;
   animation: float 3s ease-in-out infinite;
 }
 
@@ -191,7 +191,7 @@
 }
 
 .jackpotText {
-  font-size: 16px;
+  font-size: 22px;
   font-weight: 900;
   color: #ffd700;
   text-shadow: 
@@ -227,18 +227,28 @@
 }
 
 .downloadButton {
-  background: none;
-  border: none;
+  background: linear-gradient(135deg, #ffd700 0%, #ffed4e 100%);
+  border: 2px solid #dc2626;
+  border-radius: 6px;
+  padding: 8px 16px;
+  color: #ffffff;
+  font-size: 12px;
+  font-weight: bold;
   cursor: pointer;
-  padding: 0;
-  transition: transform 0.2s;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+  box-shadow: 
+    0 4px 15px rgba(0, 0, 0, 0.3),
+    0 0 20px rgba(255, 215, 0, 0.4);
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
 }
 
 .downloadButton:hover:not(:disabled) {
   transform: scale(1.05);
+  box-shadow: 
+    0 6px 20px rgba(0, 0, 0, 0.4),
+    0 0 30px rgba(255, 215, 0, 0.6);
 }
 
 .downloadButton:active:not(:disabled) {
@@ -248,19 +258,6 @@
 .downloadButton:disabled {
   cursor: not-allowed;
   opacity: 0.7;
-}
-
-.downloadButtonImage {
-  width: 100%;
-  max-width: 120px;
-  height: auto;
-  object-fit: contain;
-}
-
-@media (max-width: 480px) {
-  .downloadButtonImage {
-    max-width: 100px;
-  }
 }
 
 .agentBanner {
@@ -290,7 +287,7 @@
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 5px;
-  padding: 8px;
+  padding: 8px 12px;
   background: linear-gradient(135deg, rgba(139, 58, 139, 0.8) 0%, rgba(108, 92, 231, 0.8) 100%);
   border-radius: 10px;
   border: 2px solid #ffd700;
@@ -415,7 +412,7 @@
   background: linear-gradient(135deg, #ffd700 0%, #ffed4e 100%);
   border: 2px solid #dc2626;
   border-radius: 8px;
-  padding: 10px 20px;
+  padding: 14px 20px;
   color: #ffffff;
   font-size: 12px;
   font-weight: bold;
@@ -476,13 +473,13 @@
   }
 
   .jackpotText {
-    font-size: 15px;
+    font-size: 20px;
   }
 
   .gamesContainer {
     grid-template-columns: repeat(3, 1fr);
     gap: 4px;
-    padding: 6px;
+    padding: 6px 10px;
   }
 
   .gameName {
@@ -491,7 +488,7 @@
 
   .phoneWrapper {
     width: 32%;
-    right: 3%;
+    left: 3%;
   }
 
   .womanWrapper {
@@ -520,7 +517,7 @@
 
   .footerDownloadButton {
     font-size: 11px;
-    padding: 8px 18px;
+    padding: 12px 18px;
   }
 }
 
@@ -534,13 +531,13 @@
   }
 
   .jackpotText {
-    font-size: 14px;
+    font-size: 18px;
   }
 
   .gamesContainer {
     grid-template-columns: repeat(3, 1fr);
     gap: 3px;
-    padding: 5px;
+    padding: 5px 8px;
   }
 
   .gameCard {
@@ -552,7 +549,7 @@
   }
 
   .footerDownloadButton {
-    padding: 8px 15px;
+    padding: 12px 15px;
     font-size: 10px;
   }
 
@@ -572,5 +569,6 @@
   .phoneWrapper {
     width: 30%;
     max-width: 100px;
+    left: 3%;
   }
 }
