@@ -1,0 +1,492 @@
+.container {
+  width: 100%;
+  min-height: 100vh;
+  position: relative;
+  padding: 20px 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow-x: hidden;
+}
+
+/* 顶部标题区域 */
+.header {
+  width: 100%;
+  text-align: center;
+  margin-bottom: 20px;
+  position: relative;
+  z-index: 2;
+}
+
+.titleWrapper {
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto 15px;
+  position: relative;
+}
+
+.titleImage {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+.hindiText {
+  font-size: 24px;
+  font-weight: bold;
+  color: #ffffff;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  line-height: 1.4;
+  padding: 0 10px;
+}
+
+.hindiText .highlight {
+  color: #ffd700;
+  font-weight: 900;
+}
+
+/* 主视觉区域 */
+.mainVisual {
+  width: 100%;
+  max-width: 500px;
+  position: relative;
+  margin: 20px 0;
+  z-index: 2;
+}
+
+.womanWrapper {
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  z-index: 3;
+}
+
+.womanImage {
+  width: 100%;
+  max-width: 400px;
+  height: auto;
+  object-fit: contain;
+  filter: drop-shadow(0 10px 30px rgba(0, 0, 0, 0.3));
+}
+
+.phoneWrapper {
+  position: absolute;
+  top: 20%;
+  right: 10%;
+  width: 35%;
+  z-index: 4;
+  animation: float 3s ease-in-out infinite;
+}
+
+.phoneImage {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  filter: drop-shadow(0 5px 15px rgba(0, 0, 0, 0.4));
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+/* 装饰效果 */
+.stars {
+  position: absolute;
+  top: -10%;
+  left: -5%;
+  width: 150px;
+  height: 150px;
+  z-index: 1;
+  animation: twinkle 2s ease-in-out infinite;
+  opacity: 0.8;
+}
+
+.starsImage {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+@keyframes twinkle {
+  0%, 100% {
+    opacity: 0.6;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.1);
+  }
+}
+
+.explosion1 {
+  position: absolute;
+  top: 15%;
+  left: -10%;
+  width: 120px;
+  height: 120px;
+  z-index: 1;
+  animation: pulse 2.5s ease-in-out infinite;
+  opacity: 0.7;
+}
+
+.explosion2 {
+  position: absolute;
+  bottom: 10%;
+  right: -5%;
+  width: 120px;
+  height: 120px;
+  z-index: 1;
+  animation: pulse 3s ease-in-out infinite;
+  opacity: 0.7;
+}
+
+.explosionImage {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1) rotate(0deg);
+    opacity: 0.6;
+  }
+  50% {
+    transform: scale(1.2) rotate(180deg);
+    opacity: 0.9;
+  }
+}
+
+/* JACKPOT区域 */
+.jackpotSection {
+  width: 100%;
+  max-width: 500px;
+  text-align: center;
+  margin: 30px 0;
+  position: relative;
+  z-index: 2;
+}
+
+.jackpotText {
+  font-size: 32px;
+  font-weight: 900;
+  color: #ffd700;
+  text-shadow: 
+    2px 2px 0px #000,
+    4px 4px 8px rgba(0, 0, 0, 0.5),
+    0 0 20px rgba(255, 215, 0, 0.5);
+  margin-bottom: 20px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.crown {
+  font-size: 36px;
+  margin-right: 10px;
+  display: inline-block;
+  animation: bounce 1s ease-in-out infinite;
+}
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
+}
+
+.downloadBanner {
+  margin: 20px 0;
+}
+
+.downloadButton {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  transition: transform 0.2s;
+}
+
+.downloadButton:hover:not(:disabled) {
+  transform: scale(1.05);
+}
+
+.downloadButton:active:not(:disabled) {
+  transform: scale(0.95);
+}
+
+.downloadButton:disabled {
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+
+.agentBanner {
+  background: linear-gradient(135deg, #dc2626 0%, #b91c1c 100%);
+  border: 3px solid #ffd700;
+  border-radius: 8px;
+  padding: 12px 20px;
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: bold;
+  margin-top: 15px;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* 游戏网格 */
+.gamesGrid {
+  width: 100%;
+  max-width: 600px;
+  margin: 40px 0;
+  position: relative;
+  z-index: 2;
+}
+
+.gamesContainer {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px;
+  padding: 20px;
+  background: linear-gradient(135deg, rgba(139, 58, 139, 0.8) 0%, rgba(108, 92, 231, 0.8) 100%);
+  border-radius: 20px;
+  border: 3px solid #ffd700;
+  box-shadow: 
+    0 10px 40px rgba(0, 0, 0, 0.3),
+    inset 0 0 30px rgba(255, 215, 0, 0.1);
+  position: relative;
+  overflow: hidden;
+}
+
+.gamesContainer::before {
+  content: '';
+  position: absolute;
+  bottom: -20px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80%;
+  height: 40px;
+  background: linear-gradient(135deg, #ffd700 0%, #ffed4e 100%);
+  border-radius: 50%;
+  opacity: 0.6;
+  filter: blur(10px);
+}
+
+.gameCard {
+  position: relative;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  padding: 15px 10px;
+  text-align: center;
+  backdrop-filter: blur(10px);
+  border: 2px solid rgba(255, 215, 0, 0.3);
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.gameCard:hover {
+  transform: translateY(-5px);
+  border-color: #ffd700;
+  box-shadow: 0 8px 20px rgba(255, 215, 0, 0.4);
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.gameLabel {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 10px;
+  font-weight: bold;
+  color: #ffffff;
+  text-transform: uppercase;
+  z-index: 1;
+}
+
+.gameLabel.new {
+  background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);
+}
+
+.gameLabel.top {
+  background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+}
+
+.gameLabel.hot {
+  background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+}
+
+.gameIcon {
+  width: 100%;
+  aspect-ratio: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 8px;
+}
+
+.gameImage {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+.gameName {
+  font-size: 11px;
+  color: #ffffff;
+  font-weight: 600;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+  line-height: 1.2;
+  margin-top: 5px;
+}
+
+.coinsDecoration {
+  position: absolute;
+  bottom: -30px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 200px;
+  height: 30px;
+  background: linear-gradient(135deg, #ffd700 0%, #ffed4e 100%);
+  border-radius: 50%;
+  opacity: 0.5;
+  filter: blur(8px);
+}
+
+/* 底部下载按钮 */
+.footer {
+  width: 100%;
+  max-width: 500px;
+  text-align: center;
+  margin: 30px 0 50px;
+  position: relative;
+  z-index: 2;
+}
+
+.footerDownloadButton {
+  background: linear-gradient(135deg, #ffd700 0%, #ffed4e 100%);
+  border: 3px solid #dc2626;
+  border-radius: 12px;
+  padding: 18px 40px;
+  color: #ffffff;
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+  box-shadow: 
+    0 6px 20px rgba(0, 0, 0, 0.3),
+    0 0 30px rgba(255, 215, 0, 0.4);
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.footerDownloadButton:hover:not(:disabled) {
+  transform: translateY(-3px);
+  box-shadow: 
+    0 8px 25px rgba(0, 0, 0, 0.4),
+    0 0 40px rgba(255, 215, 0, 0.6);
+}
+
+.footerDownloadButton:active:not(:disabled) {
+  transform: translateY(-1px);
+}
+
+.footerDownloadButton:disabled {
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+
+/* Banner装饰 */
+.bannerDecoration {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  pointer-events: none;
+  opacity: 0.1;
+}
+
+.bannerImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+  .hindiText {
+    font-size: 18px;
+  }
+
+  .jackpotText {
+    font-size: 24px;
+  }
+
+  .gamesContainer {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    padding: 15px;
+  }
+
+  .gameName {
+    font-size: 9px;
+  }
+
+  .phoneWrapper {
+    width: 30%;
+    right: 5%;
+  }
+
+  .explosion1,
+  .explosion2 {
+    width: 80px;
+    height: 80px;
+  }
+
+  .stars {
+    width: 100px;
+    height: 100px;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 15px 10px;
+  }
+
+  .hindiText {
+    font-size: 16px;
+  }
+
+  .jackpotText {
+    font-size: 20px;
+  }
+
+  .gamesContainer {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px;
+    padding: 12px;
+  }
+
+  .gameCard {
+    padding: 10px 5px;
+  }
+
+  .gameName {
+    font-size: 8px;
+  }
+
+  .footerDownloadButton {
+    padding: 15px 30px;
+    font-size: 16px;
+  }
+}
