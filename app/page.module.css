@@ -1,43 +1,49 @@
 .container {
   width: 100%;
-  min-height: 100vh;
+  height: 100vh;
+  max-height: 100vh;
   position: relative;
-  padding: 20px 15px;
+  padding: 5px 8px 60px;
   display: flex;
   flex-direction: column;
   align-items: center;
   overflow-x: hidden;
+  overflow-y: hidden;
+  box-sizing: border-box;
+  justify-content: flex-start;
 }
 
 /* 顶部标题区域 */
 .header {
   width: 100%;
   text-align: center;
-  margin-bottom: 20px;
+  margin-bottom: 5px;
   position: relative;
   z-index: 2;
+  flex-shrink: 0;
 }
 
 .titleWrapper {
   width: 100%;
-  max-width: 600px;
-  margin: 0 auto 15px;
+  max-width: 100%;
+  margin: 0 auto 3px;
   position: relative;
 }
 
 .titleImage {
   width: 100%;
+  max-width: 280px;
   height: auto;
   object-fit: contain;
 }
 
 .hindiText {
-  font-size: 24px;
+  font-size: 12px;
   font-weight: bold;
   color: #ffffff;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-  line-height: 1.4;
-  padding: 0 10px;
+  line-height: 1.2;
+  padding: 0 5px;
 }
 
 .hindiText .highlight {
@@ -48,33 +54,43 @@
 /* 主视觉区域 */
 .mainVisual {
   width: 100%;
-  max-width: 500px;
+  max-width: 100%;
   position: relative;
-  margin: 20px 0;
+  margin: 2px 0;
   z-index: 2;
+  flex: 0 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 0;
+  max-height: 35vh;
 }
 
 .womanWrapper {
   position: relative;
-  width: 100%;
+  width: 60%;
+  max-width: 200px;
   display: flex;
   justify-content: center;
+  align-items: center;
   z-index: 3;
+  flex-shrink: 0;
 }
 
 .womanImage {
   width: 100%;
-  max-width: 400px;
   height: auto;
+  max-height: 200px;
   object-fit: contain;
   filter: drop-shadow(0 10px 30px rgba(0, 0, 0, 0.3));
 }
 
 .phoneWrapper {
   position: absolute;
-  top: 20%;
-  right: 10%;
+  top: 50%;
+  right: 5%;
   width: 35%;
+  max-width: 120px;
   z-index: 4;
   animation: float 3s ease-in-out infinite;
 }
@@ -88,20 +104,20 @@
 
 @keyframes float {
   0%, 100% {
-    transform: translateY(0px);
+    transform: translateY(-50%) translateY(0px);
   }
   50% {
-    transform: translateY(-10px);
+    transform: translateY(-50%) translateY(-10px);
   }
 }
 
 /* 装饰效果 */
 .stars {
   position: absolute;
-  top: -10%;
-  left: -5%;
-  width: 150px;
-  height: 150px;
+  top: -5%;
+  left: -3%;
+  width: 60px;
+  height: 60px;
   z-index: 1;
   animation: twinkle 2s ease-in-out infinite;
   opacity: 0.8;
@@ -126,10 +142,10 @@
 
 .explosion1 {
   position: absolute;
-  top: 15%;
-  left: -10%;
-  width: 120px;
-  height: 120px;
+  top: 10%;
+  left: -5%;
+  width: 50px;
+  height: 50px;
   z-index: 1;
   animation: pulse 2.5s ease-in-out infinite;
   opacity: 0.7;
@@ -137,10 +153,10 @@
 
 .explosion2 {
   position: absolute;
-  bottom: 10%;
-  right: -5%;
-  width: 120px;
-  height: 120px;
+  bottom: 5%;
+  right: -3%;
+  width: 50px;
+  height: 50px;
   z-index: 1;
   animation: pulse 3s ease-in-out infinite;
   opacity: 0.7;
@@ -166,29 +182,30 @@
 /* JACKPOT区域 */
 .jackpotSection {
   width: 100%;
-  max-width: 500px;
+  max-width: 100%;
   text-align: center;
-  margin: 30px 0;
+  margin: 2px 0;
   position: relative;
   z-index: 2;
+  flex-shrink: 0;
 }
 
 .jackpotText {
-  font-size: 32px;
+  font-size: 16px;
   font-weight: 900;
   color: #ffd700;
   text-shadow: 
     2px 2px 0px #000,
     4px 4px 8px rgba(0, 0, 0, 0.5),
     0 0 20px rgba(255, 215, 0, 0.5);
-  margin-bottom: 20px;
-  letter-spacing: 2px;
+  margin-bottom: 5px;
+  letter-spacing: 1px;
   text-transform: uppercase;
 }
 
 .crown {
-  font-size: 36px;
-  margin-right: 10px;
+  font-size: 18px;
+  margin-right: 5px;
   display: inline-block;
   animation: bounce 1s ease-in-out infinite;
 }
@@ -203,7 +220,10 @@
 }
 
 .downloadBanner {
-  margin: 20px 0;
+  margin: 5px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .downloadButton {
@@ -212,6 +232,9 @@
   cursor: pointer;
   padding: 0;
   transition: transform 0.2s;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .downloadButton:hover:not(:disabled) {
@@ -227,15 +250,28 @@
   opacity: 0.7;
 }
 
+.downloadButtonImage {
+  width: 100%;
+  max-width: 120px;
+  height: auto;
+  object-fit: contain;
+}
+
+@media (max-width: 480px) {
+  .downloadButtonImage {
+    max-width: 100px;
+  }
+}
+
 .agentBanner {
   background: linear-gradient(135deg, #dc2626 0%, #b91c1c 100%);
-  border: 3px solid #ffd700;
-  border-radius: 8px;
-  padding: 12px 20px;
+  border: 2px solid #ffd700;
+  border-radius: 6px;
+  padding: 5px 10px;
   color: #ffffff;
-  font-size: 16px;
+  font-size: 10px;
   font-weight: bold;
-  margin-top: 15px;
+  margin-top: 5px;
   text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
 }
@@ -243,20 +279,21 @@
 /* 游戏网格 */
 .gamesGrid {
   width: 100%;
-  max-width: 600px;
-  margin: 40px 0;
+  max-width: 100%;
+  margin: 2px 0;
   position: relative;
   z-index: 2;
+  flex-shrink: 0;
 }
 
 .gamesContainer {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 15px;
-  padding: 20px;
+  gap: 5px;
+  padding: 8px;
   background: linear-gradient(135deg, rgba(139, 58, 139, 0.8) 0%, rgba(108, 92, 231, 0.8) 100%);
-  border-radius: 20px;
-  border: 3px solid #ffd700;
+  border-radius: 10px;
+  border: 2px solid #ffd700;
   box-shadow: 
     0 10px 40px rgba(0, 0, 0, 0.3),
     inset 0 0 30px rgba(255, 215, 0, 0.1);
@@ -281,17 +318,17 @@
 .gameCard {
   position: relative;
   background: rgba(255, 255, 255, 0.1);
-  border-radius: 12px;
-  padding: 15px 10px;
+  border-radius: 6px;
+  padding: 5px 3px;
   text-align: center;
   backdrop-filter: blur(10px);
-  border: 2px solid rgba(255, 215, 0, 0.3);
+  border: 1px solid rgba(255, 215, 0, 0.3);
   transition: all 0.3s ease;
   cursor: pointer;
 }
 
 .gameCard:hover {
-  transform: translateY(-5px);
+  transform: translateY(-2px);
   border-color: #ffd700;
   box-shadow: 0 8px 20px rgba(255, 215, 0, 0.4);
   background: rgba(255, 255, 255, 0.2);
@@ -299,11 +336,11 @@
 
 .gameLabel {
   position: absolute;
-  top: 5px;
-  right: 5px;
-  padding: 4px 8px;
-  border-radius: 4px;
-  font-size: 10px;
+  top: 2px;
+  right: 2px;
+  padding: 2px 4px;
+  border-radius: 3px;
+  font-size: 7px;
   font-weight: bold;
   color: #ffffff;
   text-transform: uppercase;
@@ -328,7 +365,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: 8px;
+  margin-bottom: 3px;
 }
 
 .gameImage {
@@ -338,21 +375,21 @@
 }
 
 .gameName {
-  font-size: 11px;
+  font-size: 7px;
   color: #ffffff;
   font-weight: 600;
   text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
-  line-height: 1.2;
-  margin-top: 5px;
+  line-height: 1.1;
+  margin-top: 2px;
 }
 
 .coinsDecoration {
   position: absolute;
-  bottom: -30px;
+  bottom: -15px;
   left: 50%;
   transform: translateX(-50%);
-  width: 200px;
-  height: 30px;
+  width: 100px;
+  height: 15px;
   background: linear-gradient(135deg, #ffd700 0%, #ffed4e 100%);
   border-radius: 50%;
   opacity: 0.5;
@@ -362,20 +399,25 @@
 /* 底部下载按钮 */
 .footer {
   width: 100%;
-  max-width: 500px;
+  max-width: 100%;
   text-align: center;
-  margin: 30px 0 50px;
-  position: relative;
-  z-index: 2;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 8px 10px;
+  z-index: 10;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.3) 0%, transparent 100%);
+  backdrop-filter: blur(5px);
 }
 
 .footerDownloadButton {
   background: linear-gradient(135deg, #ffd700 0%, #ffed4e 100%);
-  border: 3px solid #dc2626;
-  border-radius: 12px;
-  padding: 18px 40px;
+  border: 2px solid #dc2626;
+  border-radius: 8px;
+  padding: 10px 20px;
   color: #ffffff;
-  font-size: 18px;
+  font-size: 12px;
   font-weight: bold;
   cursor: pointer;
   text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
@@ -384,7 +426,9 @@
     0 0 30px rgba(255, 215, 0, 0.4);
   transition: all 0.3s ease;
   text-transform: uppercase;
-  letter-spacing: 1px;
+  letter-spacing: 0.5px;
+  width: 100%;
+  max-width: 300px;
 }
 
 .footerDownloadButton:hover:not(:disabled) {
@@ -423,70 +467,110 @@
 
 /* 响应式设计 */
 @media (max-width: 768px) {
+  .container {
+    padding: 6px 8px 60px;
+  }
+
   .hindiText {
-    font-size: 18px;
+    font-size: 11px;
   }
 
   .jackpotText {
-    font-size: 24px;
+    font-size: 15px;
   }
 
   .gamesContainer {
     grid-template-columns: repeat(3, 1fr);
-    gap: 10px;
-    padding: 15px;
+    gap: 4px;
+    padding: 6px;
   }
 
   .gameName {
-    font-size: 9px;
+    font-size: 6px;
   }
 
   .phoneWrapper {
-    width: 30%;
-    right: 5%;
+    width: 32%;
+    right: 3%;
+  }
+
+  .womanWrapper {
+    width: 58%;
+    max-width: 180px;
+  }
+
+  .womanImage {
+    max-height: 180px;
+  }
+  
+  .mainVisual {
+    max-height: 30vh;
   }
 
   .explosion1,
   .explosion2 {
-    width: 80px;
-    height: 80px;
+    width: 40px;
+    height: 40px;
   }
 
   .stars {
-    width: 100px;
-    height: 100px;
+    width: 50px;
+    height: 50px;
+  }
+
+  .footerDownloadButton {
+    font-size: 11px;
+    padding: 8px 18px;
   }
 }
 
 @media (max-width: 480px) {
   .container {
-    padding: 15px 10px;
+    padding: 5px 6px 55px;
   }
 
   .hindiText {
-    font-size: 16px;
+    font-size: 10px;
   }
 
   .jackpotText {
-    font-size: 20px;
+    font-size: 14px;
   }
 
   .gamesContainer {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 8px;
-    padding: 12px;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 3px;
+    padding: 5px;
   }
 
   .gameCard {
-    padding: 10px 5px;
+    padding: 4px 2px;
   }
 
   .gameName {
-    font-size: 8px;
+    font-size: 6px;
   }
 
   .footerDownloadButton {
-    padding: 15px 30px;
-    font-size: 16px;
+    padding: 8px 15px;
+    font-size: 10px;
+  }
+
+  .womanWrapper {
+    width: 55%;
+    max-width: 160px;
+  }
+
+  .womanImage {
+    max-height: 160px;
+  }
+  
+  .mainVisual {
+    max-height: 28vh;
+  }
+
+  .phoneWrapper {
+    width: 30%;
+    max-width: 100px;
   }
 }

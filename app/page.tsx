@@ -115,15 +115,17 @@ export default function Home() {
               <Image
                 src="/res/A 下载中@2x.png"
                 alt="Downloading"
-                width={200}
-                height={60}
+                width={150}
+                height={45}
+                className={styles.downloadButtonImage}
               />
             ) : (
               <Image
                 src="/res/A 下载@2x.png"
                 alt="Download"
-                width={200}
-                height={60}
+                width={150}
+                height={45}
+                className={styles.downloadButtonImage}
               />
             )}
           </button>
